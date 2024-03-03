@@ -14,7 +14,7 @@ async function main () {
   // Si buscáis en la doc de mongoose (https://mongoosejs.com/docs/connections.html),
   // veréis que mongoose.connect devuelve una promesa que podemos exportar en connectMongoose
   // Espero a que se conecte la BD (para que los mensajes salgan en orden)
-  await connectMongoose
+  await connectMongoose()
 
   const answer = await askUser('Are you sure you want to empty DB and load initial data? (no) ')
   if (answer.toLowerCase() !== 'yes') {
