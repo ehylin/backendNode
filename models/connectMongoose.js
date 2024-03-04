@@ -11,12 +11,14 @@ mongoose.connection.once('open', function () {
   console.info('Connected to mongodb.')
 })
 
-const connectionPromise = mongoose.connect(process.env.MONGODB_CONNSTR, {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useCreateIndex: true
-})
+// const connectionPromise = mongoose.connect(process.env.MONGODB_CONNSTR, {
+//   useUnifiedTopology: true,
+//   useNewUrlParser: true,
+//   useFindAndModify: false,
+//   useCreateIndex: true
+// })
+
+const connectionPromise = mongoose.connect('mongodb://127.0.0.1/nodepop')
 
 // exportamos la promesa de la conexión (https://mongoosejs.com/docs/connections.html)
 module.exports = connectionPromise
